@@ -96,7 +96,7 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 ## GitHub Stats
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yasserhll&theme=github_dark" width="49%" alt="stats"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yasserhll&theme=github_dark" width="49%" alt="commits"/>
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yasserhll&theme=github_dark" width="49%" alt="langs"/>
 
 <br/>
