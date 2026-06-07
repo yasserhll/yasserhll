@@ -11,14 +11,16 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: Platane/snk/svg-only@v3
+      - name: Generate pac-man animation
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-pacman.svg?type=pacman
-            dist/github-contribution-grid-pacman-dark.svg?palette=github-dark&type=pacman
+            dist/github-contribution-grid-pacman.svg?color_snake=#FFFF00&color_dots=#1f6feb,#388bfd,#58a6ff,#79c0ff&color_empty=#161b22
+            dist/github-contribution-grid-pacman-dark.svg?palette=github-dark&color_snake=#FFFF00
 
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
           build_dir: dist
