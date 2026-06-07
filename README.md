@@ -1,12 +1,8 @@
 <div align="center">
 
 <a href="https://hallajiyassir.vercel.app">
-  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-icon.png" width="110" alt="Yassir Hallaji"/>
+  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix — logo on top"/>
 </a>
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix"/>
 
 <br/>
 
