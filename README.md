@@ -1,69 +1,135 @@
-<h1 align="center">Hi 👋, I'm Yassir Hallaji</h1>
+<div align="center">
 
-<h3 align="center">
-Full Stack Developer from Morocco 🇲🇦
-</h3>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00FF41,100:0d1117&height=140&section=header&text=YASSIR%20HALLAJI&fontSize=42&fontColor=00FF41&fontAlignY=55&animation=twinkling" />
 
-<p align="center">
-React.js • Laravel • Node.js • Express.js • MySQL • MongoDB
-</p>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1200&color=00FF41&center=true&vCenter=true&width=620&lines=Full+Stack+Developer+%2F+Morocco;React+%7C+Next.js+%7C+Laravel+%7C+Node.js;Where+Clean+Code+Meets+Sharp+Design;Building+products+that+matter)](https://git.io/typing-svg)
 
----
+<br/>
 
-## 🚀 About Me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yassir-hallaji)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://hallajiyassir.vercel.app)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hallajiyassir@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yasserhll)
 
-- 💻 Full Stack Developer
-- 🌱 Currently learning DevOps & Cloud
-- ⚛️ React.js & Next.js Developer
-- 🐘 Laravel Developer
-- 🗄️ MySQL & MongoDB
-- 📍 Morocco
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+<div align="center">
+
+```
+╔══════════════════════════════════════════════════════╗
+║           FULL STACK · DESIGN-DRIVEN · BUILDER       ║
+╚══════════════════════════════════════════════════════╝
+```
+
+</div>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**`/profile`**
+```yaml
+name: Yassir Hallaji
+role: Full Stack Developer
+location: Morocco
+focus:
+  - Web Architecture
+  - UI/UX Engineering
+  - API Design
+  - DevOps (learning)
+philosophy: Code with precision. Design with intent.
+```
+
+</td>
+<td width="50%" valign="top">
+
+**`/stack`**
+```yaml
+frontend:  [ React, Next.js, TypeScript ]
+backend:   [ Laravel, Node.js, Express ]
+database:  [ MySQL, MongoDB ]
+tools:     [ Git, Docker, Vercel, Figma ]
+style:     [ Tailwind CSS, CSS Modules ]
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+## Tech Stack
 
 ### Frontend
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
-![Next](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 ### Backend
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel)
-![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express)
+### Database & Cloud
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-### Database
-
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb)
-
----
-
-## 🌐 Portfolio
-
-- Portfolio : https://hallajiyassir.vercel.app
-- Piscine1337 : https://piscine1337.vercel.app
-- Atelier Layal : https://atelierlayal.vercel.app
+### Tools & Design
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
-![](https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=tokyonight)
+<div align="center">
 
-![](https://github-readme-streak-stats.herokuapp.com/?user=yasserhll&theme=tokyonight)
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&icon_color=00FF41&title_color=00FF41&text_color=c9d1d9&bg_color=0d1117" />
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&title_color=00FF41&text_color=c9d1d9&bg_color=0d1117" />
 
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=tokyonight)
+<br/>
+
+<img src="https://streak-stats.demolab.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&background=0d1117" />
+
+</div>
 
 ---
 
-## 📫 Contact
+## Contribution Activity
 
-LinkedIn:
-www.linkedin.com/in/yassir-hallaji
+<div align="center">
 
-Email:
-hallajiyassir@gmail.com
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake.svg" />
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake.svg" />
+</picture>
+
+</div>
+
+---
+
+## Projects
+
+| Project | Stack | Link |
+|---------|-------|------|
+| **Personal Portfolio** | Next.js · Tailwind | [![Live](https://img.shields.io/badge/Live-000000?style=flat-square&logo=vercel&logoColor=white)](https://hallajiyassir.vercel.app) |
+| **Piscine 1337** | React · Node.js | [![Live](https://img.shields.io/badge/Live-000000?style=flat-square&logo=vercel&logoColor=white)](https://piscine1337.vercel.app) |
+| **Atelier Layal** | Next.js · Laravel | [![Live](https://img.shields.io/badge/Live-000000?style=flat-square&logo=vercel&logoColor=white)](https://atelierlayal.vercel.app) |
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00FF41,100:0d1117&height=100&section=footer" />
+
+![Profile Views](https://komarev.com/ghpvc/?username=yasserhll&color=00FF41&style=for-the-badge&label=PROFILE+VIEWS)
+
+</div>
