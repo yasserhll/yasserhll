@@ -96,8 +96,8 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 ## GitHub Stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&icon_color=FF6B35&title_color=FF6B35&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&title_color=FF6B35&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="langs"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yasserhll&theme=github_dark" width="49%" alt="stats"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yasserhll&theme=github_dark" width="49%" alt="langs"/>
 
 <br/>
 
