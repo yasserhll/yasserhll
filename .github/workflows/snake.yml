@@ -2,24 +2,24 @@ name: Generate Pac-Man Contribution
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
   generate:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
-      - name: Generate pac-man animation
-        uses: Platane/snk/svg-only@v3
+      - name: Generate pac-man contribution graph
+        uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-pacman.svg?color_snake=#FFFF00&color_dots=#1f6feb,#388bfd,#58a6ff,#79c0ff&color_empty=#161b22
-            dist/github-contribution-grid-pacman-dark.svg?palette=github-dark&color_snake=#FFFF00
+          games: "pacman"
 
-      - name: Push to output branch
+      - name: Push SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
