@@ -1,13 +1,20 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix rain"/>
+<a href="https://hallajiyassir.vercel.app">
+  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-icon.png" width="110" alt="Yassir Hallaji"/>
+</a>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1200&color=00FF41&center=true&vCenter=true&width=620&lines=Yassir+Hallaji;Full+Stack+Developer+%2F+Morocco;React+%7C+Next.js+%7C+Laravel+%7C+Node.js;Where+Clean+Code+Meets+Sharp+Design)](https://git.io/typing-svg)
+<br/>
+
+<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix"/>
+
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1200&color=FF6B35&center=true&vCenter=true&width=640&lines=Yassir+Hallaji;Full+Stack+Developer+%2F+Morocco;React+%7C+Next.js+%7C+Laravel+%7C+Node.js;Code+with+precision.+Design+with+intent.)](https://git.io/typing-svg)
 
 <br/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yassir-hallaji)
-<a href="https://hallajiyassir.vercel.app"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-icon.png" height="28" alt="Portfolio" style="vertical-align:middle;border-radius:6px;margin:0 4px"/></a>
 [![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hallajiyassir@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yasserhll)
 
@@ -89,10 +96,12 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 ## GitHub Stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&icon_color=00FF41&title_color=00FF41&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&title_color=00FF41&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="langs"/>
+<img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&icon_color=FF6B35&title_color=FF6B35&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="stats"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&title_color=FF6B35&text_color=c9d1d9&bg_color=0d1117&cache_seconds=86400" width="49%" alt="langs"/>
 
-<img src="https://streak-stats.demolab.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&background=0d1117" width="100%" alt="streak"/>
+<br/>
+
+<img src="https://streak-stats.demolab.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&background=0d1117" width="100%" alt="streak"/>
 
 ---
 
@@ -101,7 +110,7 @@ style:     [ Tailwind CSS, CSS Modules ]
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake.svg"/>
-  <img alt="pac-man contribution animation" src="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake-dark.svg" width="100%"/>
+  <img alt="contribution animation" src="https://raw.githubusercontent.com/yasserhll/yasserhll/output/github-contribution-grid-snake-dark.svg" width="100%"/>
 </picture>
 
 ---
@@ -118,8 +127,8 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix rain"/>
+<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix"/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=yasserhll&color=00FF41&style=for-the-badge&label=PROFILE+VIEWS)
+![Profile Views](https://komarev.com/ghpvc/?username=yasserhll&color=FF6B35&style=for-the-badge&label=PROFILE+VIEWS)
 
 </div>
