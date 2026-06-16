@@ -21,7 +21,7 @@
 ### Portfolio & Learning Path
 
 <p align="center">
-<a href="https://hallajiyassir.vercel.app"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-corridor.gif" height="220" alt="Portfolio"/></a><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-card.svg" height="220" alt="Yassir Hallaji — Full Stack Developer"/>
+<a href="https://hallajiyassir.vercel.app"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-corridor.gif" height="220" alt="Portfolio"/><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-card.svg" height="220" alt="Yassir Hallaji — Full Stack Developer"/></a>
 </p>
 
 ---
