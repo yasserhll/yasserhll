@@ -25,26 +25,24 @@
 <td width="40%">
 
 <a href="https://hallajiyassir.vercel.app">
-  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="Portfolio"/>
+  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-corridor.gif" width="100%" alt="Portfolio"/>
 </a>
 
 </td>
 <td width="60%" valign="top">
 
-**Yassir Hallaji** — Full Stack Developer
-<sub>Casablanca, Morocco</sub>
+**Yassir Hallaji**
+<br/>
+<sub>Full Stack Developer · Casablanca, Morocco</sub>
 
-`Mastered`
-<br/>
-![Web Architecture](https://img.shields.io/badge/-Web%20Architecture-1a1a1a?style=flat-square)
-<br/>
-![UI/UX Engineering](https://img.shields.io/badge/-UI%2FUX%20Engineering-1a1a1a?style=flat-square)
-<br/>
-![API Design](https://img.shields.io/badge/-API%20Design-1a1a1a?style=flat-square)
-
-`Learning`
-<br/>
-![DevOps](https://img.shields.io/badge/-DevOps-FF6B35?style=flat-square)
+<table>
+<tr><td align="center"><sub><b>MASTERED</b></sub></td></tr>
+<tr><td align="center">Web Architecture</td></tr>
+<tr><td align="center">UI/UX Engineering</td></tr>
+<tr><td align="center">API Design</td></tr>
+<tr><td align="center"><sub><b>LEARNING</b></sub></td></tr>
+<tr><td align="center">DevOps</td></tr>
+</table>
 
 </td>
 </tr>
