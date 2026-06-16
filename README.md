@@ -18,6 +18,19 @@
 
 ---
 
+### Portfolio & Learning Path
+
+<p align="center">
+  <a href="https://hallajiyassir.vercel.app" style="display:inline-block;">
+    <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" alt="Portfolio" width="340"/>
+  </a>
+  <a href="https://github.com/yasserhll" style="display:inline-block; margin-left:16px;">
+    <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" alt="GitHub Stats" width="340"/>
+  </a>
+</p>
+
+---
+
 <div align="center">
 
 ```
