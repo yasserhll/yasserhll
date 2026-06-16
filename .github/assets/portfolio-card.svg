@@ -3,7 +3,7 @@
   <line x1="232" y1="16" x2="232" y2="204" stroke="#21262d" stroke-width="1"/>
 
   <text x="24" y="44" font-size="22" font-weight="700" fill="#ffffff">Yassir Hallaji</text>
-  <text x="24" y="66" font-size="13" fill="#8b949e">Full Stack Developer</text>
+  <text x="24" y="66" font-size="13" fill="#8b949e">Full Stack Web Developer</text>
   <line x1="24" y1="82" x2="216" y2="82" stroke="#21262d" stroke-width="1"/>
 
   <rect x="24" y="104" width="10" height="10" rx="2" fill="#FF6B35"/>
@@ -15,17 +15,17 @@
   <text x="216" y="149" font-size="13" font-weight="700" fill="#FF6B35" text-anchor="end">10+</text>
 
   <rect x="24" y="176" width="10" height="10" rx="2" fill="#FF6B35"/>
-  <text x="42" y="185" font-size="13" fill="#c9d1d9">Focus Areas</text>
+  <text x="42" y="185" font-size="13" fill="#c9d1d9">Stack Layers</text>
   <text x="216" y="185" font-size="13" font-weight="700" fill="#FF6B35" text-anchor="end">4</text>
 
   <rect x="248" y="14" width="368" height="36" rx="8" fill="none" stroke="#30363d" stroke-width="1.5"/>
-  <text x="264" y="37" font-size="14" fill="#ffffff">Web Architecture</text>
+  <text x="264" y="37" font-size="14" fill="#ffffff">Frontend · React / Next.js</text>
 
   <rect x="248" y="60" width="368" height="36" rx="8" fill="none" stroke="#30363d" stroke-width="1.5"/>
-  <text x="264" y="83" font-size="14" fill="#ffffff">UI/UX Engineering</text>
+  <text x="264" y="83" font-size="14" fill="#ffffff">Backend · Laravel / Node.js</text>
 
   <rect x="248" y="106" width="368" height="36" rx="8" fill="none" stroke="#30363d" stroke-width="1.5"/>
-  <text x="264" y="129" font-size="14" fill="#ffffff">API Design</text>
+  <text x="264" y="129" font-size="14" fill="#ffffff">Database · MySQL / MongoDB</text>
 
   <rect x="248" y="152" width="368" height="36" rx="8" fill="none" stroke="#FF6B35" stroke-width="1.5"/>
   <text x="264" y="175" font-size="14" fill="#FF6B35">DevOps · learning</text>
