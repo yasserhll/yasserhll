@@ -20,33 +20,9 @@
 
 ### Portfolio & Learning Path
 
-<table>
-<tr>
-<td width="40%">
-
-<a href="https://hallajiyassir.vercel.app">
-  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-corridor.gif" width="100%" alt="Portfolio"/>
-</a>
-
-</td>
-<td width="60%" valign="top">
-
-**Yassir Hallaji**
-<br/>
-<sub>Full Stack Developer · Casablanca, Morocco</sub>
-
-<table>
-<tr><td align="center"><sub><b>MASTERED</b></sub></td></tr>
-<tr><td align="center">Web Architecture</td></tr>
-<tr><td align="center">UI/UX Engineering</td></tr>
-<tr><td align="center">API Design</td></tr>
-<tr><td align="center"><sub><b>LEARNING</b></sub></td></tr>
-<tr><td align="center">DevOps</td></tr>
-</table>
-
-</td>
-</tr>
-</table>
+<p align="center">
+<a href="https://hallajiyassir.vercel.app"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-corridor.gif" height="220" alt="Portfolio"/></a><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/portfolio-card.svg" height="220" alt="Yassir Hallaji — Full Stack Developer"/>
+</p>
 
 ---
 
