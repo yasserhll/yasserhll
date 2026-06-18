@@ -102,7 +102,7 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 <table width="100%"><tr>
 <td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&count_private=true&bg_color=0d1117&title_color=FF6B35&icon_color=FF6B35" width="100%" alt="stats"/></td>
-<td width="50%"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=FF6B35&langs_count=8" width="100%" alt="langs"/></td>
+<td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&count_private=true&bg_color=0d1117&title_color=FF6B35&icon_color=FF6B35&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" width="100%" alt="profile details"/></td>
 </tr></table>
 
 <br/>
