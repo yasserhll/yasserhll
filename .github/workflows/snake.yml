@@ -123,7 +123,7 @@ jobs:
           fs.mkdirSync("dist", { recursive: true });
           fs.writeFileSync("dist/pacman-contribution-graph.svg", buildSVG("light"));
           fs.writeFileSync("dist/pacman-contribution-graph-dark.svg", buildSVG("dark"));
-          console.log(`✅ Pac-Man generated — ${cal.totalContributions} contributions, ${dots ? "dots placed" : "no dots"}`);
+          console.log(`✅ Pac-Man generated — ${cal.totalContributions} contributions`);
           EOF
 
       - name: Push SVG to output branch
