@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Overview stats
-        uses: lowlighter/metrics@v3
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.GH_TOKEN }}
           user: yasserhll
@@ -29,7 +29,7 @@ jobs:
           committer_message: "chore: update metrics [skip ci]"
 
       - name: Top languages
-        uses: lowlighter/metrics@v3
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.GH_TOKEN }}
           user: yasserhll
