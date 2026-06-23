@@ -18,9 +18,11 @@ jobs:
     steps:
       - name: Generate pac-man contribution graph
         uses: abozanona/pacman-contribution-graph@main
+        env:
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
         with:
           github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ github.token }}
           games: "pacman"
 
       - name: Push SVG to output branch
