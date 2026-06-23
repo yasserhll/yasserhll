@@ -1,23 +1,3 @@
-<div align="center">
-
-<a href="https://hallajiyassir.vercel.app">
-  <img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix — logo on top"/>
-</a>
-
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1200&color=FF6B35&center=true&vCenter=true&width=640&lines=Yassir+Hallaji;Full+Stack+Developer+%2F+Morocco;React+%7C+Next.js+%7C+Laravel+%7C+Node.js;Code+with+precision.+Design+with+intent.)](https://git.io/typing-svg)
-
-<br/>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yassir-hallaji)
-[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hallajiyassir@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yasserhll)
-
-</div>
-
----
-
 ### Portfolio & Learning Path
 
 <p align="center">
@@ -132,8 +112,6 @@ style:     [ Tailwind CSS, CSS Modules ]
 ---
 
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/assets/matrix-rain.svg" width="100%" alt="matrix"/>
 
 ![Profile Views](https://komarev.com/ghpvc/?username=yasserhll&color=FF6B35&style=for-the-badge&label=PROFILE+VIEWS)
 
