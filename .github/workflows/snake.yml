@@ -1,4 +1,4 @@
-name: Generate Snake Contribution
+name: Generate Pac-Man Contribution
 
 on:
   schedule:
@@ -16,12 +16,12 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - uses: Platane/snk@v3
+      - name: Generate pac-man contribution graph
+        uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/snake-contribution.svg
-            dist/snake-contribution-dark.svg?palette=github-dark
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          games: "pacman"
 
       - name: Push SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
