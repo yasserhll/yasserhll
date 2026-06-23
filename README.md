@@ -78,6 +78,12 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 ---
 
+## GitHub Stats
+
+<img src="https://streak-stats.demolab.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&background=0d1117" width="100%" alt="streak"/>
+
+---
+
 ## Pac-Man Contribution
 
 <picture>
