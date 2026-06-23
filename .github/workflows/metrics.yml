@@ -1,0 +1,44 @@
+name: GitHub Metrics
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".github/metrics/**"
+  workflow_dispatch:
+
+jobs:
+  metrics:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Overview stats
+        uses: lowlighter/metrics@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          user: yasserhll
+          filename: .github/metrics/overview.svg
+          base: header, activity, community, repositories
+          config_timezone: Africa/Casablanca
+          config_padding: 6%, 10
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Top languages
+        uses: lowlighter/metrics@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          user: yasserhll
+          filename: .github/metrics/languages.svg
+          base: ""
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_limit: 8
+          plugin_languages_categories: markup, programming
+          plugin_languages_details: percentage, bytes-size
+          plugin_languages_threshold: 2%
+          committer_message: "chore: update metrics [skip ci]"

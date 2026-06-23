@@ -81,8 +81,8 @@ style:     [ Tailwind CSS, CSS Modules ]
 ## GitHub Stats
 
 <table width="100%"><tr>
-<td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=yasserhll&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&bg_color=0d1117&title_color=FF6B35&icon_color=FF6B35" width="100%" alt="stats"/></td>
-<td width="50%"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yasserhll&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=FF6B35&langs_count=8" width="100%" alt="top languages"/></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/metrics/overview.svg" width="100%" alt="stats"/></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/yasserhll/yasserhll/main/.github/metrics/languages.svg" width="100%" alt="top languages"/></td>
 </tr></table>
 
 <br/>
