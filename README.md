@@ -87,7 +87,7 @@ style:     [ Tailwind CSS, CSS Modules ]
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&background=0d1117" width="100%" alt="streak"/>
+<img src="https://streak-stats.demolab.com?user=yasserhll&theme=github-dark-blue&hide_border=true&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&background=0d1117" width="100%" alt="streak"/>
 
 ---
 
