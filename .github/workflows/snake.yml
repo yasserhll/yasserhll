@@ -43,17 +43,18 @@ jobs:
           const data = JSON.parse(result);
           const cal = data.data.user.contributionsCollection.contributionCalendar;
 
+          // Last 26 weeks for readability
           const weeks = cal.weeks.slice(-26);
           const W = weeks.length;
           const H = 7;
           const CW = 13, CH = 13, GAP = 2;
-          const svgW = W * (CW + GAP) + 40;
-          const svgH = H * (CH + GAP) + 60;
-          const grid = weeks.map(w => w.contributionDays);
+          const STEP = CW + GAP;
+          const svgW = W * STEP + 40;
+          const svgH = H * STEP + 60;
 
-          const COLORS = {
-            dark:  { bg: "#0d1117", empty: "#161b22", dot: "#ffffff" },
-            light: { bg: "#ffffff", empty: "#ebedf0", dot: "#1a1a2e" },
+          const THEMES = {
+            dark:  { bg: "#0d1117", wall: "#1c2128", wallStroke: "#30363d", dot: "#ffffff" },
+            light: { bg: "#f6f8fa", wall: "#ebedf0", wallStroke: "#d0d7de", dot: "#1a1a2e" },
           };
 
           const R = 8;
@@ -78,11 +79,30 @@ jobs:
 
           function ghostEyes() {
             const r = R;
-            const ew = 2.4, ep = 1.4;
-            return `<circle cx="${(-r*0.38).toFixed(1)}" cy="${(-r*0.15).toFixed(1)}" r="${ew}" fill="white"/>` +
-              `<circle cx="${(r*0.38).toFixed(1)}" cy="${(-r*0.15).toFixed(1)}" r="${ew}" fill="white"/>` +
-              `<circle cx="${(-r*0.25).toFixed(1)}" cy="${(-r*0.1).toFixed(1)}" r="${ep}" fill="#1a1aff"/>` +
-              `<circle cx="${(r*0.5).toFixed(1)}" cy="${(-r*0.1).toFixed(1)}" r="${ep}" fill="#1a1aff"/>`;
+            return `<circle cx="${(-r*0.38).toFixed(1)}" cy="${(-r*0.18).toFixed(1)}" r="2.5" fill="white"/>` +
+              `<circle cx="${(r*0.38).toFixed(1)}" cy="${(-r*0.18).toFixed(1)}" r="2.5" fill="white"/>` +
+              `<circle cx="${(-r*0.22).toFixed(1)}" cy="${(-r*0.12).toFixed(1)}" r="1.4" fill="#1a1aff"/>` +
+              `<circle cx="${(r*0.52).toFixed(1)}" cy="${(-r*0.12).toFixed(1)}" r="1.4" fill="#1a1aff"/>`;
+          }
+
+          // Boustrophedon path — pac-man traverses ALL cells row by row
+          function buildPath() {
+            const path = [];
+            for (let d = 0; d < H; d++) {
+              if (d % 2 === 0) {
+                for (let w = 0; w < W; w++) path.push({ w, d });
+              } else {
+                for (let w = W - 1; w >= 0; w--) path.push({ w, d });
+              }
+            }
+            return path;
+          }
+
+          function cellCenter(w, d) {
+            return {
+              x: w * STEP + CW / 2 + 20,
+              y: d * STEP + CH / 2 + 30
+            };
           }
 
           const GHOST_PATH = ghostPath();
@@ -91,78 +111,82 @@ jobs:
           const PAC_CLOSED = pacPath(0.02);
 
           function buildSVG(theme) {
-            const C = COLORS[theme];
-            const cells = [];
-            const dots  = [];
+            const C = THEMES[theme];
+            const pathOrder = buildPath();
+            const N = pathOrder.length;
 
-            for (let w = 0; w < W; w++) {
-              for (let d = 0; d < H; d++) {
-                const day = grid[w] && grid[w][d];
-                if (!day) continue;
-                const x = w * (CW + GAP) + 20;
-                const y = d * (CH + GAP) + 30;
-                const fill = day.contributionCount > 0 ? day.color : C.empty;
-                cells.push(`<rect x="${x}" y="${y}" width="${CW}" height="${CH}" rx="2" fill="${fill}"/>`);
-                if (day.contributionCount > 0) dots.push({ x: x + CW / 2, y: y + CH / 2 });
+            // Build cell data lookup
+            const cellData = {};
+            weeks.forEach((week, w) => {
+              (week.contributionDays || []).forEach((day, d) => {
+                cellData[`${w},${d}`] = day;
+              });
+            });
+
+            const cells    = [];
+            const foodDots = [];
+
+            // Draw ALL cells — contribution cells green, empty cells as maze walls
+            for (let i = 0; i < N; i++) {
+              const { w, d } = pathOrder[i];
+              const day = cellData[`${w},${d}`];
+              const x  = w * STEP + 20;
+              const y  = d * STEP + 30;
+              const cx = x + CW / 2;
+              const cy = y + CH / 2;
+
+              if (day && day.contributionCount > 0) {
+                cells.push(`<rect x="${x}" y="${y}" width="${CW}" height="${CH}" rx="2" fill="${day.color}"/>`);
+                foodDots.push({ x: cx, y: cy, pathIdx: i });
+              } else {
+                cells.push(`<rect x="${x}" y="${y}" width="${CW}" height="${CH}" rx="2" fill="${C.wall}" stroke="${C.wallStroke}" stroke-width="0.5"/>`);
               }
             }
 
-            const sorted = dots.sort((a, b) => a.x - b.x || a.y - b.y);
+            // Keyframe positions for full path
+            const posValues = pathOrder.map(({ w, d }) => {
+              const p = cellCenter(w, d);
+              return `${p.x},${p.y}`;
+            }).join(';');
 
-            if (sorted.length === 0) {
-              return `<svg width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100%" height="100%" fill="${C.bg}"/>
-                ${cells.join('\n')}
-              </svg>`;
-            }
+            const keyTimes = pathOrder.map((_, i) => (i / (N - 1)).toFixed(3)).join(';');
+            const dur = `${(N * 0.07).toFixed(1)}s`;
 
-            const N = sorted.length;
-            const totalFrames = N + 20;
-            const dur = `${(totalFrames * 0.09).toFixed(1)}s`;
-
-            const startX = sorted[0].x - 20;
-            const startY = sorted[0].y;
-            const endX   = sorted[N - 1].x + 30;
-            const endY   = sorted[N - 1].y;
-
-            const allPos = [{ x: startX, y: startY }, ...sorted, { x: endX, y: endY }];
-            const ktArr  = [0, ...sorted.map((_, i) => (i + 10) / totalFrames), 1];
-            const kTimes = ktArr.map(t => t.toFixed(3)).join(';');
-
-            const tvMain = allPos.map(p => `${p.x},${p.y}`).join(';');
-
-            function offsetTV(off) {
-              return allPos.map((_, idx) => {
-                const src = allPos[Math.max(0, idx - off)];
-                return `${src.x},${src.y}`;
+            // Ghost offset (follow behind by N steps)
+            function ghostTV(offset) {
+              return pathOrder.map((_, i) => {
+                const src = pathOrder[Math.max(0, i - offset)];
+                const p = cellCenter(src.w, src.d);
+                return `${p.x},${p.y}`;
               }).join(';');
             }
 
-            const dotElems = sorted.map((d, i) => {
-              const t  = ((i + 10) / totalFrames).toFixed(3);
-              const t2 = Math.min((i + 12) / totalFrames, 0.999).toFixed(3);
-              return `<circle cx="${d.x}" cy="${d.y}" r="2.5" fill="${C.dot}">
+            // Food dot disappear animations
+            const dotElems = foodDots.map(({ x, y, pathIdx }) => {
+              const t  = (pathIdx / (N - 1)).toFixed(3);
+              const t2 = Math.min((pathIdx + 2) / (N - 1), 0.999).toFixed(3);
+              return `<circle cx="${x}" cy="${y}" r="2.5" fill="${C.dot}">
                 <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;${t};${t2};1" dur="${dur}" repeatCount="indefinite"/>
               </circle>`;
             }).join('\n');
 
             const ghost2 = `<g>
               <animateTransform attributeName="transform" type="translate"
-                values="${offsetTV(16)}" keyTimes="${kTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
+                values="${ghostTV(18)}" keyTimes="${keyTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
               <path d="${GHOST_PATH}" fill="#FFB8FF"/>
               ${GHOST_EYES}
             </g>`;
 
             const ghost1 = `<g>
               <animateTransform attributeName="transform" type="translate"
-                values="${offsetTV(9)}" keyTimes="${kTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
+                values="${ghostTV(10)}" keyTimes="${keyTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
               <path d="${GHOST_PATH}" fill="#FF0000"/>
               ${GHOST_EYES}
             </g>`;
 
             const pacman = `<g>
               <animateTransform attributeName="transform" type="translate"
-                values="${tvMain}" keyTimes="${kTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
+                values="${posValues}" keyTimes="${keyTimes}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
               <path fill="#FFD700">
                 <animate attributeName="d" values="${PAC_OPEN};${PAC_CLOSED};${PAC_OPEN}" dur="0.35s" repeatCount="indefinite"/>
               </path>
@@ -181,7 +205,7 @@ jobs:
           fs.mkdirSync("dist", { recursive: true });
           fs.writeFileSync("dist/pacman-contribution-graph.svg", buildSVG("light"));
           fs.writeFileSync("dist/pacman-contribution-graph-dark.svg", buildSVG("dark"));
-          console.log(`Pac-Man generated — ${cal.totalContributions} contributions`);
+          console.log(`Pac-Man generated — ${cal.totalContributions} total contributions`);
           EOF
 
       - name: Push SVG to output branch
