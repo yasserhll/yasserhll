@@ -44,24 +44,35 @@ jobs:
           const cal = data.data.user.contributionsCollection.contributionCalendar;
           const weeks = cal.weeks;
 
-          // Build grid: [week][day] = { count, color }
           const grid = weeks.map(w => w.contributionDays);
-          const W = grid.length;   // number of weeks
-          const H = 7;             // days per week
-
+          const W = grid.length;
+          const H = 7;
           const CW = 13, CH = 13, GAP = 2;
-          const COLS = W;
-          const svgW = COLS * (CW + GAP) + 40;
+          const svgW = W * (CW + GAP) + 40;
           const svgH = H * (CH + GAP) + 60;
+
           const COLORS = {
-            dark:  { bg: "#0d1117", empty: "#161b22", text: "#c9d1d9" },
-            light: { bg: "#ffffff", empty: "#ebedf0", text: "#24292f" },
+            dark:  { bg: "#0d1117", empty: "#161b22", dot: "#ffffff" },
+            light: { bg: "#ffffff", empty: "#ebedf0", dot: "#24292f" },
           };
+
+          function pacPath(mouthAngle) {
+            const r = 7;
+            if (mouthAngle < 0.01) {
+              return `M0,0 L${r},0 A${r},${r} 0 1,0 ${r},0.001 Z`;
+            }
+            const cx = Math.cos(mouthAngle) * r;
+            const sy = Math.sin(mouthAngle) * r;
+            return `M0,0 L${cx.toFixed(2)},${(-sy).toFixed(2)} A${r},${r} 0 1,0 ${cx.toFixed(2)},${sy.toFixed(2)} Z`;
+          }
+
+          const openPath  = pacPath(0.40);
+          const closedPath = pacPath(0.02);
 
           function buildSVG(theme) {
             const C = COLORS[theme];
             const cells = [];
-            const dots = [];   // food positions for pac-man to eat
+            const dots  = [];
 
             for (let w = 0; w < W; w++) {
               for (let d = 0; d < H; d++) {
@@ -77,45 +88,57 @@ jobs:
               }
             }
 
-            // Pac-man path: follow dots left-to-right, top-to-bottom
             const sorted = dots.sort((a, b) => a.x - b.x || a.y - b.y);
-            const totalFrames = sorted.length + 20;
-            const dur = `${(totalFrames * 0.12).toFixed(1)}s`;
 
-            // Pac-man body animation keyframes
-            let pxFrames = "", pyFrames = "";
-            const step = 1 / totalFrames;
-            for (let i = 0; i < sorted.length; i++) {
-              const t = ((i + 10) * step * 100).toFixed(1);
-              pxFrames += `${t}%{cx:${sorted[i].x}px}`;
-              pyFrames += `${t}%{cy:${sorted[i].y}px}`;
+            if (sorted.length === 0) {
+              return `<svg width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="${C.bg}"/>
+                ${cells.join('\n')}
+              </svg>`;
             }
 
-            const startX = sorted[0]?.x ?? 20;
-            const startY = sorted[0]?.y ?? 30;
+            const totalFrames = sorted.length + 20;
+            const dur = `${(totalFrames * 0.1).toFixed(1)}s`;
 
-            // Dot hide animations
-            const dotAnims = sorted.map((d, i) => {
-              const t = ((i + 10) * step * 100).toFixed(1);
-              const id = `d${i}`;
-              return `
-                <circle id="${id}" cx="${d.x}" cy="${d.y}" r="2" fill="${C.text}" opacity="1">
-                  <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;${(parseFloat(t) / 100).toFixed(3)};${Math.min(parseFloat(t) / 100 + 0.01, 1).toFixed(3)};1" dur="${dur}" repeatCount="indefinite"/>
-                </circle>`;
-            }).join("");
+            const startX = sorted[0].x - 20;
+            const startY = sorted[0].y;
+            const endX   = sorted[sorted.length - 1].x + 30;
+            const endY   = sorted[sorted.length - 1].y;
 
-            const pacman = sorted.length > 0 ? `
-              <g>
-                <circle r="7" fill="#FFD700">
-                  <animate attributeName="cx" values="${startX};${sorted.map(d => d.x).join(";")}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
-                  <animate attributeName="cy" values="${startY};${sorted.map(d => d.y).join(";")}" dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
-                </circle>
-              </g>` : "";
+            const translateValues = [
+              `${startX},${startY}`,
+              ...sorted.map(d => `${d.x},${d.y}`),
+              `${endX},${endY}`
+            ].join(';');
+
+            const translateKeyTimes = [
+              '0',
+              ...sorted.map((_, i) => ((i + 10) / totalFrames).toFixed(3)),
+              '1'
+            ].join(';');
+
+            const dotElems = sorted.map((d, i) => {
+              const t  = ((i + 10) / totalFrames).toFixed(3);
+              const t2 = Math.min((i + 12) / totalFrames, 0.999).toFixed(3);
+              return `<circle cx="${d.x}" cy="${d.y}" r="2.5" fill="${C.dot}">
+                <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;${t};${t2};1" dur="${dur}" repeatCount="indefinite"/>
+              </circle>`;
+            }).join('\n');
+
+            const pacman = `<path fill="#FFD700">
+              <animateTransform attributeName="transform" type="translate"
+                values="${translateValues}"
+                keyTimes="${translateKeyTimes}"
+                dur="${dur}" repeatCount="indefinite" calcMode="linear"/>
+              <animate attributeName="d"
+                values="${openPath};${closedPath};${openPath}"
+                dur="0.35s" repeatCount="indefinite"/>
+            </path>`;
 
             return `<svg width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg">
               <rect width="100%" height="100%" fill="${C.bg}"/>
-              ${cells.join("\n")}
-              ${dotAnims}
+              ${cells.join('\n')}
+              ${dotElems}
               ${pacman}
             </svg>`;
           }
@@ -123,7 +146,7 @@ jobs:
           fs.mkdirSync("dist", { recursive: true });
           fs.writeFileSync("dist/pacman-contribution-graph.svg", buildSVG("light"));
           fs.writeFileSync("dist/pacman-contribution-graph-dark.svg", buildSVG("dark"));
-          console.log(`✅ Pac-Man generated — ${cal.totalContributions} contributions`);
+          console.log(`Pac-Man generated — ${cal.totalContributions} contributions`);
           EOF
 
       - name: Push SVG to output branch
